@@ -15,4 +15,13 @@ const createOne = async userBody => {
   }
 };
 
-export { createOne };
+const userCheck = async userBody => {
+  try {
+    const user = await UserModel.findOne({ email: userBody.email });
+    return user;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { createOne, userCheck };
