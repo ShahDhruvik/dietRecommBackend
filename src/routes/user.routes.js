@@ -1,8 +1,10 @@
 import express from 'express';
 import UserController from '../controller/user.controller.js';
-import UserSchemaValidation from '../schemaValidation/user.validation.js';
+import UserSchema from '../schemaValidation/user.validation.js';
+import validate from '../middleware/validationMiddleware.js';
 
 const router = express.Router();
 
-router.post('/register', UserController);
+router.post('/register', validate(UserSchema), UserController);
+
 export default router;

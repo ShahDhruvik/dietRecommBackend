@@ -1,5 +1,5 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
-export const { MONGO_URL, PORT } = process.env
+export const { MONGO_URL, PORT, SALT_ROUNDS } = process.env;
